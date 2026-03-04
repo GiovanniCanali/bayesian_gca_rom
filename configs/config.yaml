@@ -1,0 +1,26 @@
+defaults:
+  - experiment: poisson
+  - _self_
+
+experiment:
+  seed: 42
+  model_name: GCA_ROM
+  run_training: True
+  output_dir: results/
+  ckpt: null
+  ensemble: False
+  mc_steps: 100
+  train_size: 0.7
+  val_size: 0.2
+  test_size: 0.1
+  devices: 1
+  max_epochs: 100000
+  inject_uq: decoder
+  max_plots: 10
+
+hydra:
+  job:
+    chdir: False
+  run:
+    dir: .
+  output_subdir: null
